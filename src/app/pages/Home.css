@@ -1,0 +1,71 @@
+.Home_main_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: stretch;
+    margin-top: 4rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.Home_header {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    min-height: fit-content;
+    top: 4rem;
+    text-align: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1.5px solid #1F51FF;
+}
+
+.Home_header_top {
+    width: 100%;
+    align-self: flex-start;
+    height: 1.85rem;
+    background-color: #1F51FF;
+}
+
+.Home_main_container-body {
+    width: 100%;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Leave_community_btn {
+    width: 100px;
+    align-self: center;
+    background-color: white;
+    justify-self: flex-end;
+    border: none;
+    height: 2rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2px solid red;
+    color: red;
+    font-weight: 600;
+}
+
+.Leave_community_btn:hover {
+    border-color: rgb(255, 111, 111);
+    color: rgb(255, 111, 111);
+}

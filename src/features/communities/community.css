@@ -1,0 +1,294 @@
+.Community_main_container {
+    margin-top: 12rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    min-height: 100vh;
+    height: fit-content;
+
+}
+
+.Community_header {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    min-height: fit-content;
+    top: 4rem;
+    text-align: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1.5px solid #9a00b5;
+
+}
+
+.Community_header_top {
+    width: 100%;
+    align-self: flex-start;
+    height: 1.85rem;
+    background-color: #9a00b5;
+}
+
+.create_community_btn {
+    width: 35%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-self: center;
+    height: 2.8rem;
+    border: none;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.create_community_btn h5 {
+    font-size: larger;
+    align-self: center;
+    justify-self: center;
+    padding-top: 5px;
+    
+}
+
+.create_community_btn h4 {
+    font-size: x-large;
+    align-self: center;
+    justify-self: center;
+    padding-top: 2.5px;
+    padding-right: 3px;
+}
+    
+
+.create_community_btn:hover {
+    background-color: rgb(242, 255, 228);
+}
+
+.Community_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    width: 100%;
+    min-height: fit-content;
+}
+
+.Community-card_content {
+    width: 80%;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    background-color: white;
+    padding-left: 1rem;
+    height: 4rem;
+    text-decoration: none;
+    list-style: none;
+    height: 130px;
+    min-height: fit-content;
+    margin-bottom: 1rem;
+}
+
+.Community-card_content h3 {
+    color: black;
+    width: 75%;
+    min-height: fit-content;
+    text-align: left;
+    overflow-wrap: break-word;
+
+}
+
+.Community-card_content:hover {
+    background-color: rgb(188, 186, 255);
+}
+
+.Community-card_content img{
+    justify-self: flex-start;
+    width: 4rem;
+    height: 4rem;
+}
+
+.community_btns {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Community_modal {
+    display: flex;
+    z-index: 99;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.330);
+    height: 100%;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Community_modal_content {
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.Community_modal_content_header {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    justify-content: space-between;
+
+}
+
+.Community_modal_content_header h1 {
+    font-size: xx-large;
+    justify-self: center;
+    margin-left: 50%;
+    transform: translate(-48%, 0);
+    -webkit-transform: translate(-48%, 0);
+    -moz-transform: translate(-48%, 0);
+    -ms-transform: translate(-48%, 0);
+    -o-transform: translate(-48%, 0);
+}
+
+.close_community_modal {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.Community_modal_content_header button:hover {
+    background-color: rgb(167, 196, 196);
+    border-radius: 100vh;
+    -webkit-border-radius: 100vh;
+    -moz-border-radius: 100vh;
+    -ms-border-radius: 100vh;
+    -o-border-radius: 100vh;
+}
+
+.Community_modal_content_input {
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    justify-content: space-around;
+    justify-self: center;
+}
+
+.Community_modal_content_input textarea{
+    width: 80%;
+    border: 1px solid black;
+    min-height: 150px;
+    padding-left: 15px;
+    padding-top: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: large;
+}
+
+.Community_modal_content_input h5 {
+    margin-top: 10px;
+}
+
+.Community_submit_btn {
+    width:200px;
+    height:3rem;
+    border: none;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    justify-self: center;
+    background-color: rgb(124, 207, 210);
+}
+
+.Community_submit_btn:hover {
+    background-color: rgb(118, 160, 160);
+}
+
+
+.Join_community_btn {
+    width: 100px;
+    align-self: center;
+    z-index: 4;
+    background-color: white;
+    justify-self: flex-end;
+    border: none;
+    height: 2.5rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2.5px solid blue;
+    color: blue;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.Join_community_btn:hover {
+    border-color: rgb(111, 111, 255);
+    color: rgb(111, 111, 255);
+}
+
+.Leave_community_btn {
+    width: 100px;
+    align-self: center;
+    z-index: 4;
+    background-color: white;
+    justify-self: flex-end;
+    border: none;
+    height: 2.5rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2.5px solid red;
+    color: red;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.Leave_community_btn:hover {
+    border-color: rgb(255, 111, 111);
+    color: rgb(255, 111, 111);
+}
+
+.create_community_header_error {
+    height: 1rem;
+    color: red;
+}

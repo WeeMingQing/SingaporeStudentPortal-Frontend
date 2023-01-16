@@ -1,0 +1,138 @@
+.navbardropdown {
+    height: 2.2rem;
+    background-color: white;
+    padding: 0 1rem;
+}
+
+.navbardropdown_nav {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.icon-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    transition: filter 300ms;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button img {
+    width: 2rem;
+    height: 2rem;
+    
+}
+
+.icon-button:hover, .icon-button-clicked:hover{
+    background-color: rgba(231, 231, 231, 0.924);
+    filter: brightness(0.95);
+}
+
+.icon-button.clicked {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    transition: filter 300ms;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.dropdown {
+    position: absolute;
+    display: flex;
+    top:63px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transform: translateX(-82%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    -webkit-transform: translateX(-82%);
+    -moz-transform: translateX(-82%);
+    -ms-transform: translateX(-82%);
+    -o-transform: translateX(-82%);
+}
+
+.menu {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    align-items: flex-start;
+    justify-content:center;
+    height: 230px;
+    min-width: fit-content;
+}
+
+.menu h6 {
+    justify-self: center;
+    font-weight: 700;
+    font-size: medium;
+    text-align: center;
+    width: 250px;
+    min-height: 30px;
+    height: fit-content;
+    inline-size: 250px;
+    overflow-wrap: break-word;
+    border-bottom: 1px solid black;
+
+}
+
+.menu-item {
+    height: 60px;
+    display: flex;
+    flex:1;
+    width: 280px;
+    align-items: center;
+    transition: background 300ms;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background-color: #d4d7e3;
+}
+
+.icon-right {
+    margin-left: auto;
+}
+
+.text-title {
+    text-align: left;
+    margin-left: 5px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    color: black;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,213 @@
+.Feed_container {
+    margin-top: 17rem;
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Feed_header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    min-height: fit-content;
+    top: 4rem;
+    text-align: center;
+    border-bottom: 1px solid rgb(3, 225, 225);
+}
+
+.Feed_header_top{
+    width: 100%;
+    height: 25%;
+    background-color: rgb(3, 225, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Feed_header_button {
+    width: 20rem;
+    height: 2.2rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 600;
+    border: 2.5px solid rgb(70, 0, 211);
+}
+
+.Feed_header_button:hover {
+    filter: brightness(0.8);
+    -webkit-filter: brightness(0.8);
+}
+
+.Feed_header_bottom{
+    width: 100%;
+    height: 75%;
+    background-color:white;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    justify-content: center;
+}
+
+.Feed_header_bottom h1{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+.Feed_header_bottom h3{
+    letter-spacing: -0.005em;
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.Feed_header_bottom h2{
+    letter-spacing: -0.005em;
+    font-size: large;
+}
+
+.Post_render_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: fit-content;
+    margin-top: 15px;
+}
+
+.Post_create_container {
+    width: 80%;
+    justify-self: center;
+    min-height: 200px;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.Post_create_textarea {
+    height: 186px;
+    width: 70%;
+    font-size: larger;
+    font-weight: 400;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.Post_create_textarea::placeholder {
+    color: rgb(82, 82, 82);
+}
+
+.emptyError::placeholder {
+    color: red;
+}
+
+.Post_create_button {
+    grid-template-columns: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    text-align: center;
+
+}
+
+.Post_create_button button{
+    width: 130px;
+    height: 2rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: rgb(171, 171, 255);
+}
+
+.Post_create_button h5 {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: rgb(124, 124, 124);
+    font-weight: 700;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.Post_create_button h4 {
+    height: 65%;
+    inline-size: 135px;
+    overflow-wrap: break-word;
+    overflow: scroll;
+    font-size: 24px;
+
+}
+
+.Post_divider {
+    display: flex;
+    margin-top: 1rem;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    justify-self: center;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+    height: 4rem;
+}
+
+.Post_divider h1 {
+    width: 20%;
+    align-self: center;
+    padding: 0 1rem;
+
+}
+
+.black_line {
+    width:40%;
+    height: 10px;
+    background-color: black;
+    align-self: center;
+    justify-self: center;
+}
+
+.Community_status {
+    display: flex;
+    justify-self: center;
+    width: 75%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.leaveBtnDisplay {
+    border-color: red;
+    color: red;
+}
