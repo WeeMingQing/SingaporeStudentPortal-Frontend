@@ -113,7 +113,7 @@ function Posts({PostIndex, PostContent, PostCreator, PostUpdateDate, PostCreatio
         } else {
         const commentData = {
             comment : {
-                content: commentContent,
+                content: commentContent.trim(),
                 username: username,
                 user_id: userId,
                 post_id: PostIndex,

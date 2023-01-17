@@ -31,7 +31,7 @@ export function Community({changeUser}: CommunityProps) {
     const [communityHeader, setCommunityHeader] = useState<string>("");
     const [editCommunityId, setEditCommunityId] = useState<number>(-1);
     const [createCommunityId, setCreateCommunityId] = useState<number>(-1);
-    const [headerArr, setHeaderArr] = useState<string[]>([]);
+    const [headerArr, setHeaderArr] = useState<CommunityState[]>([]);
     const [openCommunityModal, setOpenCommunityModal] = useState<boolean>(false);
     const [createCommunityHeaderErrorMsg, setCreateCommunityHeaderErrorMsg] = useState<string>("");
 
@@ -53,18 +53,18 @@ export function Community({changeUser}: CommunityProps) {
         communityHeader: string,
         event: React.MouseEvent,
         deleteOrCreate: boolean,
-        community_id: number
+        commIndex: number
     }
 
-    function updateJoinedCommunity({community_id, communityHeader, event, deleteOrCreate}: updateJoinedCommunityProps) {
+    function updateJoinedCommunity({commIndex, communityHeader, event, deleteOrCreate}: updateJoinedCommunityProps) {
         event.preventDefault();
-        setEditCommunityId(community_id);
+        setEditCommunityId(commIndex);
         console.log("It ran", user_id, username);
         if (username != "") {
         if (deleteOrCreate) {
             const CommunityData =  {
                 community: {
-                    id:community_id
+                    id:commIndex
                 }
         }
             dispatch(destroyCommunityAsync(CommunityData))
@@ -100,7 +100,7 @@ export function Community({changeUser}: CommunityProps) {
         } else {
         const CommunityData = {
             community: {
-                header: communityHeader,
+                header: communityHeader.trim(),
                 user_id: user_id,
                 username: username
             }
@@ -130,12 +130,7 @@ export function Community({changeUser}: CommunityProps) {
           })
           .then(response => response.json())
           .then(data => {
-            const d: joinedCommunities[] = data;
-            let headerArray:string[] = [];
-            d.forEach(community => {
-                headerArray.push(community.header);
-            })
-            setHeaderArr(headerArray);
+            setHeaderArr(data);
           });
 }}, [createCommunityId, editCommunityId, changeUser]);
 
@@ -153,15 +148,16 @@ export function Community({changeUser}: CommunityProps) {
                     const communityHeader = community.header as string;
                     const username = community.username;
                     const communityCreateDate = community.created_at as string;
-                    const deleteOrCreate:boolean = (headerArr.includes(community.header as string)) ? true : false
-                    const btnStyle = (deleteOrCreate) ? "Leave" : "Join"
+                    const deleteOrCreate:boolean = (headerArr.filter(comm => comm.header == community.header).length != 0) ? true : false;
+                    const btnStyle = (deleteOrCreate) ? "Leave" : "Join";
+                    const commIndex = (deleteOrCreate) ? headerArr.filter(comm => comm.header == community.header)[0].id as number : 0;
                     return (
                         <React.Fragment key={community.id as number}>
                                 <Link className="Community-card_content" to={"/Feed"} 
                                 onClick={() => {communityClicked({communityId, communityHeader, username,communityCreateDate})}}>
                                 <h3>{community.header}</h3>
                                 <div className="community_btns">
-                                    <button className={`${btnStyle}_community_btn`} onClick={(event)=> {updateJoinedCommunity({community_id, communityHeader, event, deleteOrCreate})}}>{
+                                    <button className={`${btnStyle}_community_btn`} onClick={(event)=> {updateJoinedCommunity({commIndex, communityHeader, event, deleteOrCreate})}}>{
                                     (deleteOrCreate) ? "Leave" : "Join"    
                                     }
                                     </button>

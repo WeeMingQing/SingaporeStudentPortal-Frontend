@@ -90,7 +90,7 @@ export function Feed() {
             setEditPostId(5); 
         const PostData = {
             post: {
-                content: postContent,
+                content: postContent.trim(),
                 user_id: userId,
                 username: curr_username,
                 community_id: community_id,
@@ -139,8 +139,11 @@ export function Feed() {
             });
         }
         console.log(commId);
+    },[community_id, communityHeader]);
+
+    useEffect(() => {
         dispatch(fetchPostsAsync(commId));
-    },[community_id, setPostContent, editPostId, communityHeader]);
+    },[setPostContent, editPostId,]);
 
     return (
         <div className="Feed_container">

@@ -49,9 +49,9 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                     "Accept": "application/json",
                 },
                 body: JSON.stringify({
-                    username: username.current,
-                    email: email.current,
-                    password: password.current
+                    username: username.current.trim(),
+                    email: email.current.trim(),
+                    password: password.current.trim()
                 })
             })
             .then((response) => response.json())
@@ -86,8 +86,8 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                     "Accept": "application/json"
                 },
                 body: JSON.stringify({
-                    username: username.current,
-                    password: password.current
+                    username: username.current.trim(),
+                    password: password.current.trim()
                 })
             })
             .then((response) => response.json())

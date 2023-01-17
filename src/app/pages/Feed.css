@@ -140,8 +140,14 @@
     justify-content: center;
     width: 120px;
     text-align: center;
-
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+.Post_create_button::-webkit-scrollbar {
+    display: none;
+  }
+  
 
 .Post_create_button button{
     width: 130px;
