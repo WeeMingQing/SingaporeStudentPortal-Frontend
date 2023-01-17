@@ -1,6 +1,6 @@
 import { CommentState, CommentsState, CommentFormData, CommentDeleteData} from "./commentSlice";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://mq-sspr.onrender.com";
 const token = localStorage.getItem("token");
 
 type fetchCommentsProps = {

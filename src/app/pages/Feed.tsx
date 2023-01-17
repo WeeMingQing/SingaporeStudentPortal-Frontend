@@ -12,7 +12,7 @@ import { useSelectAuthProvider } from "../hooks/AuthProvider"
 export function Feed() {
     const {toggleModal} = useSelectAuthProvider();
     const curr_username = localStorage.getItem("username") as string;
-    const API_URL = "http://localhost:3000";
+    const API_URL = "https://mq-sspr.onrender.com";
     const userId = parseInt(localStorage.getItem("user_id") as string);
     const community_id = parseInt(localStorage.getItem("community_id") as string);
     const community_header = localStorage.getItem("community_header") as string;

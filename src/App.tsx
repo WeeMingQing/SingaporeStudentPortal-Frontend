@@ -19,7 +19,7 @@ function App() {
   const [changeUser, setChangeUser] = useState<string>("");
   const toggleUser = (username: string) => setChangeUser(username);
 
-  const API_URL = "http://localhost:3000";
+  const API_URL = "https://mq-sspr.onrender.com";
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("Home ran now");

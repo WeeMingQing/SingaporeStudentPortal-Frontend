@@ -26,7 +26,7 @@ export function Home() {
     const [communitiesNumber, setCommunitiesNumber] = useState<number>(0);
     useEffect(() => {
         localStorage.setItem("DropDownNavigationDisplay", "Home");
-        const API_URL = "http://localhost:3000";
+        const API_URL = "https://mq-sspr.onrender.com";
         const token = localStorage.getItem("token");
         const user_id = localStorage.getItem("user_id");
         if (user_id != "") {

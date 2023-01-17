@@ -23,7 +23,7 @@ export function Community({changeUser}: CommunityProps) {
     const user_id = localStorage.getItem("user_id") as string;
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username") as string;
-    const API_URL = "http://localhost:3000";
+    const API_URL = "https://mq-sspr.onrender.com";
     
     const dispatch = useAppDispatch();
     const communities = useAppSelector(selectCommunities);

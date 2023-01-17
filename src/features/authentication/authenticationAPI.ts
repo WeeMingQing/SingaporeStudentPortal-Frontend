@@ -1,6 +1,6 @@
 import { AuthenticationsState, AuthenticationFormData, AuthenticationDeleteData} from "./authenticationSlice";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://mq-sspr.onrender.com";
 
 export async function fetchUsers() {
     return fetch(`${API_URL}/users.json`, {

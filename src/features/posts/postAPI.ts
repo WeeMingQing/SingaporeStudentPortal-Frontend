@@ -1,6 +1,6 @@
 import { PostsState, PostFormData, PostDeleteData} from "./postSlice";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://mq-sspr.onrender.com";
 const token = localStorage.getItem("token");
 
 export async function fetchPosts(index:string) {

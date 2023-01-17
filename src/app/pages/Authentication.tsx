@@ -41,7 +41,7 @@ export default function Authentication({changeUser}: AuthenticationProps) {
 
     function handleSignUp({event, username, email, password}: handleSignUpProps) {
         event.preventDefault();
-        const API_URL = "http://localhost:3000";
+        const API_URL = "https://mq-sspr.onrender.com";
         fetch(`${API_URL}/signup`, {
                 method: "POST",
                 headers: {
@@ -78,7 +78,7 @@ export default function Authentication({changeUser}: AuthenticationProps) {
 
     function handleSignIn({event, username, password}: handleSignInProps) {
         event.preventDefault();
-        const API_URL = "http://localhost:3000";
+        const API_URL = "https://mq-sspr.onrender.com";
         fetch(`${API_URL}/login`, {
                 method: "POST",
                 headers: {
