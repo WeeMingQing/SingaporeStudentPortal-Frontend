@@ -22,7 +22,7 @@ function App() {
   const API_URL = "https://mq-sspr.onrender.com";
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Home ran now");
+    console.log("Home ran now", localStorage.getItem("username"));
     if (token) {
       fetch(`${API_URL}/auto_login`, {
         method: "GET",
