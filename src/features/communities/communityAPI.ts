@@ -1,6 +1,6 @@
 import { CommunitiesState, CommunityFormData, CommunityDeleteData} from "./communitySlice";
 import { CommunityState } from "./communitySlice";
-const API_URL = "https://mq-sspr.onrender.com/";
+const API_URL = "https://mq-sspr.onrender.com";
 const token = localStorage.getItem("token");
 
 type fetchUserCountProps = {
