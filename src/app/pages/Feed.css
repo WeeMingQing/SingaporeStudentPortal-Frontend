@@ -141,15 +141,7 @@
     width: 120px;
     text-align: center;
     -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow: hidden;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
-
-.Post_create_button::-webkit-scrollbar {
-    display: none;
-  }
   
 
 .Post_create_button button{
@@ -176,7 +168,7 @@
     height: 65%;
     inline-size: 135px;
     overflow-wrap: break-word;
-    overflow: scroll;
+    overflow: hidden;
     font-size: 24px;
 
 }
