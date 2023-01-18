@@ -22,6 +22,7 @@
     height: 700px;
     display: grid;
     align-items: center;
+    align-self: center;
     justify-content: center;
     z-index: 12;
     position: fixed;
