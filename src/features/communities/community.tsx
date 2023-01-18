@@ -150,7 +150,7 @@ export function Community({changeUser}: CommunityProps) {
                     const communityCreateDate = community.created_at as string;
                     const deleteOrCreate:boolean = (headerArr.filter(comm => comm.header == community.header).length != 0) ? true : false;
                     const btnStyle = (deleteOrCreate) ? "Leave" : "Join";
-                    const commIndex = (deleteOrCreate) ? headerArr.filter(comm => comm.header == community.header)[0].id as number : 0;
+                    const commIndex = community.id as number;
                     return (
                         <React.Fragment key={community.id as number}>
                                 <Link className="Community-card_content" to={"/Feed"} 
