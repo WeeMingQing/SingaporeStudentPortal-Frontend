@@ -30,7 +30,7 @@ export function Community({changeUser}: CommunityProps) {
     const status = useAppSelector(selectStatus);
     const [communityHeader, setCommunityHeader] = useState<string>("");
     const [editCommunityId, setEditCommunityId] = useState<number>(-1);
-    const [createCommunityId, setCreateCommunityId] = useState<number>(-1);
+    const [createCommunity, setCreateCommunity] = useState<boolean>(false);
     const [headerArr, setHeaderArr] = useState<CommunityState[]>([]);
     const [openCommunityModal, setOpenCommunityModal] = useState<boolean>(false);
     const [createCommunityHeaderErrorMsg, setCreateCommunityHeaderErrorMsg] = useState<string>("");
@@ -109,7 +109,7 @@ export function Community({changeUser}: CommunityProps) {
         dispatch(createCommunityAsync(CommunityData))
         .then(() => {
             setCommunityHeader("");
-            setCreateCommunityId(-1);
+            setCreateCommunity(prevCreateCommunity => !prevCreateCommunity);
             setOpenCommunityModal(prevOpenCommunityModal => !prevOpenCommunityModal)
             setCreateCommunityHeaderErrorMsg("");    
         })
@@ -132,7 +132,7 @@ export function Community({changeUser}: CommunityProps) {
           .then(data => {
             setHeaderArr(data);
           });
-}}, [createCommunityId, editCommunityId, changeUser]);
+}}, [createCommunity, editCommunityId, changeUser]);
 
     let contents;
 
@@ -190,7 +190,6 @@ export function Community({changeUser}: CommunityProps) {
                         <div className="Community_modal_content_input">
                             <h5>Header:</h5>
                             <textarea placeholder="Enter header for community"
-                            onFocus={(e) => setCreateCommunityId(-2)}
                             onChange={(e) => setCommunityHeader(e.target.value)}></textarea>
                         </div>
                         <button className="Community_submit_btn"
