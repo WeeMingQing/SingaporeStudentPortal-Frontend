@@ -142,6 +142,9 @@
     text-align: center;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .Post_create_button::-webkit-scrollbar {

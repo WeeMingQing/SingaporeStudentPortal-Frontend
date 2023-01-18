@@ -143,7 +143,6 @@ export function Community({changeUser}: CommunityProps) {
         contents = 
         <div className="Community_container">
                 {communities && communities.length > 0 && communities.map(community => {
-                    const community_id = community.id as number;
                     const communityId = `${community.id as number}`;
                     const communityHeader = community.header as string;
                     const username = community.username;
