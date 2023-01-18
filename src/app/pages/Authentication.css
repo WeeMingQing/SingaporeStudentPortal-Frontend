@@ -144,6 +144,8 @@
     -o-border-radius: 6vh;
     background-color: rgb(248, 105, 2);
     font-size: larger;
+    font-weight: 550;
+    letter-spacing: 0.05rem;
 }
 
 .Authentication_main_container_button:hover {

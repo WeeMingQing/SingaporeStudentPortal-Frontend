@@ -208,6 +208,10 @@
     justify-content: space-around;
 }
 
+.Community_status h2 {
+    flex: 1;
+}
+
 .leaveBtnDisplay {
     border-color: red;
     color: red;

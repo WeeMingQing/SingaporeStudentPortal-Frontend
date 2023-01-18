@@ -25,6 +25,9 @@ export default function Authentication({changeUser}: AuthenticationProps) {
     const [usernameEntered, setUsernameEntered] = useState<string>("");
     const [passwordEntered, setPasswordEntered] = useState<string>("");
     const [EmailEntered, setEmailEntered] = useState<string>("");
+    const [loadingButton, setLoadingButton] = useState<boolean>(false);
+    const [signupBtn, setSignupBtn] = useState<string>("Sign Up");
+    const [loginBtn, setLoginBtn] = useState<string>("Login");
 
     type handleSignUpProps = {
         event: any
@@ -43,6 +46,8 @@ export default function Authentication({changeUser}: AuthenticationProps) {
     function handleSignUp({event, username, email, password}: handleSignUpProps) {
         event.preventDefault();
         const API_URL = "https://mq-sspr.onrender.com";
+        setLoadingButton(true);
+        setSignupBtn("Loading...");
         fetch(`${API_URL}/signup`, {
                 method: "POST",
                 headers: {
@@ -58,7 +63,9 @@ export default function Authentication({changeUser}: AuthenticationProps) {
             .then((response) => response.json())
             .then(data => {
                 if (data.error) {
-                    setErrorMessage(data.error)
+                    setErrorMessage(data.error);
+                    setLoadingButton(false);
+                    setSignupBtn("Sign Up")
                 } else {
                     localStorage.setItem("token", data.token);
                     localStorage.setItem("user_id", data.user.id);
@@ -80,6 +87,8 @@ export default function Authentication({changeUser}: AuthenticationProps) {
     function handleSignIn({event, username, password}: handleSignInProps) {
         event.preventDefault();
         const API_URL = "https://mq-sspr.onrender.com";
+        setLoadingButton(true);
+        setLoginBtn("Loading...");
         fetch(`${API_URL}/login`, {
                 method: "POST",
                 headers: {
@@ -95,6 +104,8 @@ export default function Authentication({changeUser}: AuthenticationProps) {
             .then(data => {
                 if (data.error) {
                     setErrorMessage(data.error);
+                    setLoadingButton(false);
+                    setLoginBtn("Login");
                 } else {
                     localStorage.setItem("token", data.token)
                     localStorage.setItem("user_id", data.user.id)
@@ -206,8 +217,12 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                     </div>
                     
                 </div>
-                <button className="Authentication_main_container_button"
-                onClick={(event) => {handleSignUp({event, username, email, password})}}>Sign Up</button>
+                <button 
+                disabled={loadingButton}
+                className="Authentication_main_container_button"
+                onClick={(event) => {handleSignUp({event, username, email, password})}}>
+                    {signupBtn}
+                </button>
                 <div className="Authentication_switch">
                     <text>Already got an account?</text>
                     <p onClick={() => {resetInput(); toggleModal("Close"); toggleModal("Login")}}>Login</p>
@@ -233,8 +248,12 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                         <text>Password</text>
                     </div>
                 </div>
-                <button className="Authentication_main_container_button"
-                onClick={(event) => handleSignIn({event, username, password})}>Login</button>
+                <button
+                disabled={loadingButton}
+                className="Authentication_main_container_button"
+                onClick={(event) => handleSignIn({event, username, password})}>
+                    {loginBtn}
+                </button>
                 <div className="Authentication_switch">
                     <text>Not an existing user?</text>
                     <p onClick={() => {resetInput(); toggleModal("Close"); toggleModal("SignUp")}}>Sign Up</p>

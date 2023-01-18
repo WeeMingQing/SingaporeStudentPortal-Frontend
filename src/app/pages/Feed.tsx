@@ -12,6 +12,9 @@ import { useSelectAuthProvider } from "../hooks/AuthProvider"
 //To display the community, as well as the associate posts and comments
 // that user has clicked into
 export function Feed() {
+    localStorage.setItem("DropDownNavigationDisplay", "Explore");
+    let event = new Event('storage');
+    window.dispatchEvent(event);
     const {toggleModal} = useSelectAuthProvider();
     const curr_username = localStorage.getItem("username") as string;
     const API_URL = "https://mq-sspr.onrender.com";

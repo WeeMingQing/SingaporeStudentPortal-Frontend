@@ -1,5 +1,5 @@
 import "./MainNavBar.css"
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import cx from "classnames"
 
 //The navbar dropdown that enables users to navigate between home and explore.
@@ -8,7 +8,15 @@ export function MainNavBar() {
     const [caret, setCaret] = useState<string>("selected_img");
     const [borderClicked, setBorderClicked] = useState<string>("");
     const selectedItem = (localStorage.getItem("DropDownNavigationDisplay") == null) ? "Home" : localStorage.getItem("DropDownNavigationDisplay");
- 
+    const [selectedPage, setSelectedPage] = useState<string>("");
+
+    useEffect(() => {
+        window.addEventListener('storage', (e) => setSelectedPage(selectedItem as string));
+    return () => {
+      window.removeEventListener('storage', (e) => setSelectedPage(selectedItem as string));
+    };
+  }, [selectedPage]);
+
     function toggleDropDown() {
         if (dropDown === "") {
             setBorderClicked("border_clicked")
