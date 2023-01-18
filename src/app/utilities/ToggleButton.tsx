@@ -1,4 +1,3 @@
-import React, {useState} from "react"
 import './ToggleButton.css'
 import cx from "classnames"
 
@@ -8,6 +7,7 @@ type ToggleButtonProps = {
     onToggle: () => void
 }
 
+//To toggle on and off darkmode
 export function ToggleButton({rounded, isToggled, onToggle}: ToggleButtonProps) {
     const str = rounded ? "rounded" : ""
     const sliderCX = cx("slider", str)

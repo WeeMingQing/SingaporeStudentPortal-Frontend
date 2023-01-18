@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, memo} from "react"
+import React, {useState, useEffect} from "react"
 import "./community.css"
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { CommunityState, destroyCommunityAsync, selectCommunities, selectStatus } from "./communitySlice";

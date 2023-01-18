@@ -1,4 +1,4 @@
-import React, { createContext, MutableRefObject, ReactNode, useContext, useState, useRef } from "react"
+import { createContext, ReactNode, useContext, useState, useRef } from "react"
 
 
 const SelectAuthContext = createContext({} as SelectAuthContext)
@@ -20,6 +20,7 @@ type AuthProviderProps = {
     children: ReactNode
 }
 
+//useContext to toggle on and off login/signup modal
 export function AuthProvider({children}: AuthProviderProps) {
     const [modalToggle, setModalToggle] = useState<boolean>(false);
     const [authType, setAuthType] = useState<string>("");

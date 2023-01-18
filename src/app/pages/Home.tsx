@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { useSelectAuthProvider } from "../hooks/AuthProvider"
 import "./Home.css"
 import { CommunityState, destroyCommunityAsync } from "../../features/communities/communitySlice"
 import { Link } from "react-router-dom"
@@ -12,6 +11,7 @@ type communityClickedProps = {
     communityCreateDate: string
 }
 
+//Set the community info that user has clicked into
 export function communityClicked({communityId, communityHeader, username, communityCreateDate}: communityClickedProps) {
     localStorage.setItem("community_id", communityId);
     localStorage.setItem("community_header", communityHeader);
@@ -19,6 +19,7 @@ export function communityClicked({communityId, communityHeader, username, commun
     localStorage.setItem("CommunityCreateDate", communityCreateDate)
 }
 
+//To display all the communities that the user has joined
 export function Home() {
     const dispatch = useAppDispatch();
     const [communityId, setCommunityId] = useState<number>(-1);

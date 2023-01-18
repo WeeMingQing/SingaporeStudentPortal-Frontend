@@ -1,18 +1,19 @@
 import "./Authentication.css"
-import React, {ReactNode, useState, useRef, useEffect, MutableRefObject} from 'react'
+import React, {useState, useRef, useEffect, MutableRefObject} from 'react'
 import Modal from "react-overlays/Modal";
 import cx from "classnames"
 import { useSelectAuthProvider } from "../hooks/AuthProvider";
-import {createUsersAsync, selectAuthentication, fetchUsersAsync, AuthenticationState} from '../../features/authentication/authenticationSlice';
-import {useAppDispatch, useAppSelector}  from '../hooks'
+import {fetchUsersAsync} from '../../features/authentication/authenticationSlice';
+import {useAppDispatch}  from '../hooks'
 
 type AuthenticationProps = {
     changeUser: (username: string) => void
 }
 
+//The modal that will appear to prompt and enable users to login/signup
 export default function Authentication({changeUser}: AuthenticationProps) {
     const dispatch = useAppDispatch();
-    const {toggleModal, modalToggle, authType, currentUsername, toggleUsername} = useSelectAuthProvider();
+    const {toggleModal, modalToggle, authType, toggleUsername} = useSelectAuthProvider();
     const [errorMessage, setErrorMessage] = useState<string>("")
     const [showModal, setShowModal] = useState<boolean>(modalToggle);
     const username = useRef<string>("");

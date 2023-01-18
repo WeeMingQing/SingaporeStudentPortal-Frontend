@@ -1,5 +1,5 @@
 import "./NavBarDropDown.css"
-import React, {ReactNode, useState, useEffect, ReactEventHandler} from "react";
+import React, {ReactNode, useState, useEffect} from "react";
 import cx from "classnames"
 import { ToggleButton } from "./ToggleButton";
 import { Link } from "react-router-dom";
@@ -78,7 +78,7 @@ const NavItem: React.FC<NavItemProps> = ({index, curr, setFunc, source}: NavItem
     )
   };
 
-
+//The dropdown for settings
 export function NavBarDropDown() {
     const [selectedItem, setSelectedItem] = useState<Number>(-1);
     function setItem(value : Number) {

@@ -1,4 +1,4 @@
-import React, {useEffect, useState, } from 'react'
+import {useState} from 'react'
 import "./navbar.css"
 import { RiMenu3Line, RiCloseLine} from "react-icons/ri"
 //RiMenu3Line creates 3 lines, RiCloseLine displays a cross
@@ -10,6 +10,7 @@ import {NavBarDropDown} from "../utilities/NavBarDropDown"
 import { MainNavBar } from '../utilities/MainNavBar'
 import { CommunityState } from '../../features/communities/communitySlice'
 
+//Menu to replace MainNavBar when screen size is small
 const Menu = () => (
   <>
   <p><Link to="/" className="ssp__navbar-menu_container-title-style">
@@ -23,10 +24,11 @@ type NavbarProps = {
   communityData: CommunityState[];
 }
 
+//This is the main navbar that is fixed at the top of the page
 export function Navbar({communityData}: NavbarProps) {
   const username = localStorage.getItem("username");
   const {toggleDarkTheme, themeColour, textColour} = useDarkTheme()
-  const {toggleModal, modalToggle, authType} = useSelectAuthProvider();
+  const {toggleModal} = useSelectAuthProvider();
   const [togglingMenu, setTogglingMenu] = useState<boolean>(false);
 
 

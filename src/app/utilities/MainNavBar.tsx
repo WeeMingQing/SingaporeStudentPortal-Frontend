@@ -1,8 +1,8 @@
 import "./MainNavBar.css"
-import React, {useState, useRef} from "react"
+import React, {useState} from "react"
 import cx from "classnames"
 
-
+//The navbar dropdown that enables users to navigate between home and explore.
 export function MainNavBar() {
     const [dropDown, setDropDown] = useState<string>("");
     const [caret, setCaret] = useState<string>("selected_img");

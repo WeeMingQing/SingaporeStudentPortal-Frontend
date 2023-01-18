@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import "./SearchBar.css"
 import SearchIcon from "@material-ui/icons/Search"
 import CloseIcon from "@material-ui/icons/Close"
-import { fetchCommunitiesAsync, selectCommunities } from "../../features/communities/communitySlice"
-import { useAppDispatch, useAppSelector } from "../hooks"
 import { CommunityState } from "../../features/communities/communitySlice"
 import { Link } from "react-router-dom"
 import { communityClicked } from "../pages/Home"
@@ -13,6 +11,7 @@ type SearchBarProps = {
     communityData: CommunityState[]
 }
 
+//Enable users to search for communities
 export function SearchBar({placeholder, communityData}: SearchBarProps) {
     const communities = communityData;
     const [filteredData, setFilteredData] = useState<CommunityState[]>([]);

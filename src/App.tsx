@@ -8,7 +8,7 @@ import { Explore } from './app/pages/Explore'
 import { Container } from 'react-bootstrap'
 import Navbar from './app/components/Navbar1';
 import Authentication from './app/pages/Authentication';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { fetchCommunitiesAsync, selectCommunities } from './features/communities/communitySlice';
 

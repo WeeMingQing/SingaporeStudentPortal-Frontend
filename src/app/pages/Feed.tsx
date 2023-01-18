@@ -9,6 +9,8 @@ import { joinedCommunities } from "../../features/communities/community";
 import { createCommunityAsync, destroyCommunityAsync } from "../../features/communities/communitySlice";
 import { useSelectAuthProvider } from "../hooks/AuthProvider"
 
+//To display the community, as well as the associate posts and comments
+// that user has clicked into
 export function Feed() {
     const {toggleModal} = useSelectAuthProvider();
     const curr_username = localStorage.getItem("username") as string;
