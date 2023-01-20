@@ -42,7 +42,6 @@ export function Home() {
       .then(data => {
           setJoinedCommunities(data);
           setCommunitiesNumber((data) ? data.length : 0);
-          console.log(joinedCommunities);
       });
     }
 

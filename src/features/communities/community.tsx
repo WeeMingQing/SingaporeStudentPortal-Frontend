@@ -59,7 +59,6 @@ export function Community({changeUser}: CommunityProps) {
     function updateJoinedCommunity({commIndex, communityHeader, event, deleteOrCreate}: updateJoinedCommunityProps) {
         event.preventDefault();
         setEditCommunityId(commIndex);
-        console.log("It ran", user_id, username);
         if (username != "") {
         if (deleteOrCreate) {
             const CommunityData =  {
@@ -92,7 +91,6 @@ export function Community({changeUser}: CommunityProps) {
     }
 
     function handleCommunitySubmit() {
-        console.log(communityHeader);
         if (communityHeader == "") {
         setCreateCommunityHeaderErrorMsg("Please fill in the header!");
         } else if (communities.filter(community => community.header.toUpperCase() == communityHeader.toUpperCase()).length != 0) {
@@ -119,7 +117,6 @@ export function Community({changeUser}: CommunityProps) {
     useEffect(() => {
         localStorage.setItem("DropDownNavigationDisplay", "Explore");
         dispatch(fetchCommunitiesAsync(""));
-        console.log("here", communities);
         if (user_id) {
           fetch(`${API_URL}/users/communities`, {
             method: "GET",

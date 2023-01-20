@@ -22,7 +22,6 @@ function App() {
   const API_URL = "https://mq-sspr.onrender.com";
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Home ran now", localStorage.getItem("username"));
     if (token) {
       fetch(`${API_URL}/auto_login`, {
         method: "GET",
@@ -35,7 +34,6 @@ function App() {
         setChangeUser(data.username)
         localStorage.setItem("user_id", `${data.id}`);
         localStorage.setItem("username", data.username);
-        console.log(localStorage.getItem("username"));
       });
     }
     dispatch(fetchCommunitiesAsync(""));

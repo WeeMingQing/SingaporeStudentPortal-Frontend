@@ -19,7 +19,6 @@ export async function fetchPostComments({getComments, PostIndex}: fetchCommentsP
         getComments(data);
     })
     .catch((error) => {
-        console.log("Error: ", error);
     })
 }
 
@@ -35,7 +34,6 @@ export async function fetchComments(index: string) {
         },
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
     })
 }
 
@@ -52,7 +50,6 @@ export async function createComment(payload: CommentFormData) {
         })
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as CommentsState;
     })
 }
@@ -67,7 +64,6 @@ export async function destroyComment(payload: CommentDeleteData) {
         },
         }).then((response) => response.json())
         .catch((error) => {
-            console.log("Error:", error);
     }
     )
 }
@@ -85,7 +81,6 @@ export async function updateComment(payload: CommentFormData) {
         }),
     }).then((response) => response.json())
     .catch((e) => {
-        console.log("Error:", e);
         return {} as CommentsState;
     })
 }

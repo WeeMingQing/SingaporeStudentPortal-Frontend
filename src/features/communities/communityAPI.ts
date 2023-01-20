@@ -38,7 +38,6 @@ export async function fetchCommunities(index:string) {
         },
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as CommunitiesState;
     })
 }
@@ -56,7 +55,6 @@ export async function createCommunity(payload: CommunityFormData) {
         })
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as CommunitiesState;
     })
 }
@@ -71,7 +69,6 @@ export async function destroyCommunity(payload: CommunityDeleteData) {
         },
         }).then((response) => response.json())
         .catch((error) => {
-            console.log("Error:", error);
             return {} as CommunitiesState;
     }
     )
@@ -89,7 +86,6 @@ export async function updateCommunity(payload: CommunityFormData) {
         }),
     }).then((response) => response.json())
     .catch((e) => {
-        console.log("Error:", e);
         return {} as CommunitiesState;
     })
 }

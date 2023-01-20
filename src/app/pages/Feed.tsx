@@ -44,7 +44,6 @@ export function Feed() {
     }
 
     function updateJoinedCommunity({community_id, community_header, deleteOrCreateValue}: updateJoinedCommunityProps) {
-        console.log("It ran", userId, username);
         if (curr_username != "") {
         if (deleteOrCreateValue) {
             const CommunityData =  {
@@ -133,7 +132,6 @@ export function Feed() {
             .then(response => response.json())
             .then(data => {
               const d: joinedCommunities[] = data;
-              console.log("cek", d);
               d.forEach(community => {
                 if (community.header == community_header) {
                     deleteOrCreate.current = true;
@@ -143,7 +141,6 @@ export function Feed() {
               })
             });
         }
-        console.log(commId);
     },[community_id, communityHeader]);
 
     useEffect(() => {

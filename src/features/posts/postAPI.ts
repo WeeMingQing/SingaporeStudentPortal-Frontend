@@ -11,7 +11,6 @@ export async function fetchPosts(index:string) {
         },
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as PostsState;
     })
 }
@@ -29,7 +28,6 @@ export async function createPosts(payload: PostFormData) {
         })
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as PostsState;
     })
 }
@@ -44,7 +42,6 @@ export async function destroyPost(payload: PostDeleteData) {
         },
         }).then((response) => response.json())
         .catch((error) => {
-            console.log("Error:", error);
             return {} as PostsState;
     }
     )
@@ -63,7 +60,6 @@ export async function updatePost(payload: PostFormData) {
         }),
     }).then((response) => response.json())
     .catch((e) => {
-        console.log("Error:", e);
         return {} as PostsState;
     })
 }

@@ -176,9 +176,7 @@ function Posts({PostIndex, PostContent, PostCreator, PostUpdateDate, PostCreatio
     }
     }
     useEffect(() => {
-        console.log("checkpost", PostIndex)
         fetchPostComments({getComments, PostIndex});
-        console.log("checkcomments", comments)
     },[commentContent, PostIndex, editPostId, editCommentId])
 
     return (

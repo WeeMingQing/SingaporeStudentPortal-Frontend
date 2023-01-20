@@ -10,7 +10,6 @@ export async function fetchUsers() {
         },
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as AuthenticationsState;
     })
 }
@@ -27,7 +26,6 @@ export async function createUsers(payload: AuthenticationFormData) {
         })
     }).then((response) => response.json())
     .catch((error) => {
-        console.log("Error: ", error);
         return {} as AuthenticationsState;
     })
 }
@@ -44,7 +42,6 @@ export async function destroyUser(payload: AuthenticationDeleteData) {
         }),
         }).then((response) => response.json())
         .catch((error) => {
-            console.log("Error:", error);
             return {} as AuthenticationsState;
     }
     )
@@ -62,7 +59,6 @@ export async function updateUser(payload: AuthenticationFormData) {
         }),
     }).then((response) => response.json())
     .catch((e) => {
-        console.log("Error:", e);
         return {} as AuthenticationsState;
     })
 }

@@ -72,8 +72,6 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                     localStorage.setItem("username", data.username);
                     toggleUsername(data.user.username);
                     changeUser(data.user.username);
-                    console.log("Hello", data.token)
-                    console.log("damn", data.user.username);
                     toggleModal("Close");
                     window.location.reload();
                 }
@@ -112,7 +110,6 @@ export default function Authentication({changeUser}: AuthenticationProps) {
                     localStorage.setItem("username", data.username);
                     toggleUsername(data.user.username);
                     changeUser(data.user.username);
-                    console.log(data)
                     toggleModal("Close");
                     window.location.reload();
                 }
@@ -134,7 +131,6 @@ export default function Authentication({changeUser}: AuthenticationProps) {
             setEmailEntered("");       
         }
 
-        console.log(EmailEntered);
 
     }
 
@@ -142,14 +138,12 @@ export default function Authentication({changeUser}: AuthenticationProps) {
         const target = event.target as HTMLInputElement;
         password.current = target.value;
         setPasswordState(password.current);
-        console.log(password);
         if(password.current !== "") {
             setPasswordEntered("Authentication_input filled");
         } else {
             setPasswordEntered("");        
         }
 
-        console.log(EmailEntered);
 
     }
 
@@ -157,14 +151,12 @@ export default function Authentication({changeUser}: AuthenticationProps) {
         const target = event.target as HTMLInputElement;
         username.current = target.value;
         setUsernameState(username.current);
-        console.log(username);
         if(username.current !== "") {
             setUsernameEntered("Authentication_input filled");
         } else {
             setUsernameEntered("");        
         }
 
-        console.log(usernameEntered);
 
     }
 
