@@ -49,6 +49,7 @@ export function Home() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        localStorage.setItem("DropDownNavigationDisplay", "Home");
     },[])
 
     type deleteJoinedCommunityProps = {
