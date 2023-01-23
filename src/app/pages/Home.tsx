@@ -50,6 +50,8 @@ export function Home() {
     useEffect(() => {
         window.scrollTo(0, 0);
         localStorage.setItem("DropDownNavigationDisplay", "Home");
+        let event = new Event('storage');
+        window.dispatchEvent(event);
     },[])
 
     type deleteJoinedCommunityProps = {

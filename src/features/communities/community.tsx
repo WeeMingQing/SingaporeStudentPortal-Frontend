@@ -116,6 +116,8 @@ export function Community({changeUser}: CommunityProps) {
 
     useEffect(() => {
         localStorage.setItem("DropDownNavigationDisplay", "Explore");
+        let event = new Event('storage');
+        window.dispatchEvent(event);
         dispatch(fetchCommunitiesAsync(""));
         if (user_id) {
           fetch(`${API_URL}/users/communities`, {
